@@ -14,10 +14,12 @@ import './css/app.css';
 
 Framework7.use(Framework7Vue)
 
+import axios from 'axios'
+Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
 
 new Vue({
-  store,
-  render: h => h(App)
+    store,
+    render: h => h(App)
 }).$mount('#app')

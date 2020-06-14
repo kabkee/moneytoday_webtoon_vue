@@ -1,12 +1,18 @@
 <template>
-  <f7-page>
-    <f7-navbar title="About" back-link="Back"></f7-navbar>
-    <f7-block-title>About My App</f7-block-title>
+  <f7-page color-theme='orange'>
+    <f7-navbar title="웹툰 창고란?" back-link="Back"></f7-navbar>
+    <f7-block-title>제작 목적</f7-block-title>
     <f7-block strong>
-      <p>Here is About page!</p>
-      <p>You can go <f7-link back>back</f7-link>.</p>
-      <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>
-      <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+      <p><strong>머니투데이</strong>(https://www.mt.co.kr/)에서 제공하는 만화 서비스가 <strong>2020년 6월 30일</strong>자로 <strong class='text-color-red'>서비스 종료</strong>됨에 따라, 본 서비스는 개인소장용도로 웹툰을 보전하는 목적으로 제작되었습니다</p>
+      <p></p>
+      <p></p>
+    </f7-block>
+
+	<f7-block-title>제작자</f7-block-title>
+    <f7-block strong>
+      <p>(주)인디스팟</p>
+      <p>개발자의 일탈, <a class="link external" href='https://github.com/kabkee' target='_blank'>@kabkee</a></p>
+      <p></p>
     </f7-block>
   </f7-page>
 </template>
