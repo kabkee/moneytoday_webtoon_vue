@@ -7,7 +7,7 @@
             </f7-list-item>
         </f7-list>
         <f7-list media-list>
-            <f7-list-item v-for='(toon, toonIdx) in filteredToons' :key='toonIdx' :title="toon.title" link="#">
+            <f7-list-item v-for='toon in filteredToons' :key='toon.id' :title="toon.title" :link="'/toon/'+toon.id">
                 <img
                     slot="media"
                     :src="toon.thumb"
@@ -19,14 +19,18 @@
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
     data(){
         return {
-            toons: [],
             search: '',
         }
     },
     computed: {
+        ...mapGetters({
+            toons: 'getToons'
+        }),
         filteredToons(){
             if(this.search){
                 this.search = this.search.trim();
@@ -38,10 +42,13 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            setToons: 'setToons'
+        }),
         onPageBeforeIn(){
             this.$axios.get('/api/list')
             .then((result)=>{
-                this.toons = result.data
+                this.setToons(result.data);
             })
         }
     }
