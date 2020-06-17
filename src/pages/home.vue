@@ -13,12 +13,23 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
       </f7-nav-right> -->
         </f7-navbar>
-        <f7-block-title>최근 본 만화</f7-block-title>
-        <f7-list>
-            <f7-list-item link="/about/" title="About"></f7-list-item>
-            <f7-list-item link="/form/" title="Form"></f7-list-item>
-        </f7-list>
-        <!-- <f7-block-title>Modals</f7-block-title>
+        <f7-block strong>
+        </f7-block>
+		<f7-block-title>최근 본 만화</f7-block-title>
+		<f7-list media-list v-if='currentChapters.length'>
+            <f7-list-item v-for='chapter in currentChapters' :key='chapter.title+"_"+chapter.id' :title="chapter.folder_name" :link="`/toon/${chapter.toon_id}/chapter/${chapter.id}/`">
+                <img
+                    slot="media"
+                    :src="chapter.thumb"
+                    width="44"
+                />
+			</f7-list-item>
+		</f7-list>
+		<f7-list media-list v-else>
+            <f7-list-item style='color: grey; font-size: 0.8em;' title='최근에 본 만화가 없습니다.'></f7-list-item>
+		</f7-list>
+        
+		<!-- <f7-block-title>Modals</f7-block-title>
         <f7-block strong>
             <f7-row>
                 <f7-col width="50">
@@ -59,5 +70,23 @@
     </f7-page>
 </template>
 <script>
-export default {};
+export default {
+	data(){
+		return {
+			currentChapters: [],
+		}
+	},
+	mounted(){
+		if(this.$localStorage.available('localStorage')){
+			this.currentChapters = this.$localStorage.getCurrentChapter();
+			console.info(this.currentChapters)
+		}
+	},
+	computed: {
+		
+	},
+	methods: {
+
+	},
+};
 </script>

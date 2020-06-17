@@ -1,6 +1,18 @@
 <template>
     <f7-page color-theme="orange" @page:beforein='onPageBeforeIn'>
-        <f7-navbar :title="(toonData?toonData.title:'')" back-link="Back"></f7-navbar>
+         <f7-navbar>
+			<f7-nav-left>
+				<f7-link :href="`/toons`" icon="icon-back"></f7-link>
+			</f7-nav-left>
+			<f7-nav-title>{{toonData?toonData.title:''}}</f7-nav-title>
+			<f7-nav-right>
+                <f7-link
+                    icon-if-ios="f7:menu"
+                    icon-if-md="material:menu"
+                    panel-open="left"
+                ></f7-link>
+            </f7-nav-right>
+		</f7-navbar>
         <!-- <f7-list>
             <f7-list-item>
                 <f7-input @input="search = $event.target.value" type="text" placeholder="제목 검색"></f7-input>
@@ -70,11 +82,16 @@ export default {
 					this.setToons(result.data);
 				})
 			}
+			this.$f7.preloader.show();
 			this.getChapters();
 		},
 		getChapters(){
 			this.$axios.get(`/api/chapter/${this.toonId}`)
 			.then((result)=>{
+				console.info('getChapters!! bam')
+				this.$f7.preloader.hide();
+				console.info('preloader.hide')
+
 				this.setChapters(result.data);
 			})
 		}
