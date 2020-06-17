@@ -14,10 +14,14 @@
     <f7-block-title>기타</f7-block-title>
     <f7-list>
       <f7-list-item link="/about/" title="웹툰 창고란?" view="#main-view" panel-close></f7-list-item>
+      <f7-list-item link='/logout' title="로그아웃" view="#main-view" panel-close></f7-list-item>
       <!-- <f7-list-item link="/form/" title="Form" view="#main-view" panel-close></f7-list-item> -->
     </f7-list>
   </f7-page>
 </template>
 <script>
-export default {}
+export default {
+	methods: {
+	}
+}
 </script>

@@ -82,15 +82,15 @@
 export default {
     data() {
         return {
-            currentChapters: [],
+			currentChapters: [],
         };
     },
     mounted() {
-		this.initCurrentChapters();
+		this.initStorageData();
 	},
     computed: {},
     methods: {
-        initCurrentChapters() {
+        initStorageData() {
             if (this.$localStorage.available("localStorage")) {
                 this.currentChapters = this.$localStorage.getCurrentChapter();
             }

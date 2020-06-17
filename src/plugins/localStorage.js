@@ -72,5 +72,17 @@ export const localStorage = {
     clearCurrentChapters: () => {
         const localStorage = window['localStorage'];
         localStorage.removeItem('current_chapters');
+    },
+    setAuthed: (authed) => {
+        const localStorage = window['localStorage'];
+        localStorage.setItem('authed', authed);
+    },
+    getAuthed: () => {
+        const localStorage = window['localStorage'];
+        return localStorage.getItem('authed');
+    },
+    logout: () => {
+        const localStorage = window['localStorage'];
+        localStorage.removeItem('authed');
     }
 }

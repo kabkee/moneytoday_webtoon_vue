@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
     devServer: {
         proxy: {
@@ -10,5 +12,6 @@ module.exports = {
                 changeOrigin: true,
             }
         }
-    }
+    },
+    outputDir: path.resolve(__dirname, "../../NodeJs/moneytoday_webtoon_server_nodejs/dist"),
 }
