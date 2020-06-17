@@ -24,7 +24,7 @@
                 <img
                     style="max-width: 100%;"
                     :src="
-                        `/data/${chapterData.toon_title}/${chapterData.folder_name}/${file}`
+                        `/data/toon_${chapterData.toon_id}/episode_${chapterData.id}/${file}`
                     "
                 />
             </f7-list-item>

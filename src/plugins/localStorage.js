@@ -68,5 +68,9 @@ export const localStorage = {
             console.error('Vue Plugin localStorage.getCurrentChapter Error !! ', e)
         }
         return [];
+    },
+    clearCurrentChapters: () => {
+        const localStorage = window['localStorage'];
+        localStorage.removeItem('current_chapters');
     }
 }
