@@ -88,10 +88,7 @@ export default {
 		getChapters(){
 			this.$axios.get(`/api/chapter/${this.toonId}`)
 			.then((result)=>{
-				console.info('getChapters!! bam')
 				this.$f7.preloader.hide();
-				console.info('preloader.hide')
-
 				this.setChapters(result.data);
 			})
 		}
