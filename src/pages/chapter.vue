@@ -65,11 +65,6 @@ export default {
             setChapters: "setChapters",
         }),
         onPageBeforeIn() {
-            console.info(
-                "this.toonId, this.chapterId",
-                this.toonId,
-                this.chapterId
-            );
 			this.$f7.preloader.show();
             this.getChapters();
         },
@@ -90,7 +85,6 @@ export default {
 			// localStorage 기능 사용 가능할 때, 해당 챕터 최신으로 저장
 			if(this.$localStorage.available('localStorage')){
 				this.$localStorage.addCurrentChapter(data)
-				console.info('this.$localStorage.getCurrentChapter()', this.$localStorage.getCurrentChapter());
 			}
 		},
 		// 다음

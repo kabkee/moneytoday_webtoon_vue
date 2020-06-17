@@ -79,7 +79,6 @@ export default {
 	mounted(){
 		if(this.$localStorage.available('localStorage')){
 			this.currentChapters = this.$localStorage.getCurrentChapter();
-			console.info(this.currentChapters)
 		}
 	},
 	computed: {
