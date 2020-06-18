@@ -45,7 +45,7 @@ export default {
 			pw: "",
 			confirmData: {
 				id: 'admin',
-				pw: '1004$look360'
+				pw: '1234567890a'
 			}
         };
     },
