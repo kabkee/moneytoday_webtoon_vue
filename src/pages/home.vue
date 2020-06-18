@@ -99,7 +99,7 @@ export default {
             this.$f7.dialog.confirm(
                 "최근 본 만화 기록을 삭제합니다.", "확인", () => {
 					this.$localStorage.clearCurrentChapters();
-					this.initCurrentChapters();
+					this.initStorageData();
                 }
             );
         },

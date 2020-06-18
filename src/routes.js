@@ -14,7 +14,6 @@ function checkAuth(to, from, resolve, reject) {
     if (localStorage.available("localStorage")) {
         let authed = localStorage.getAuthed();
         authed = authed ? parseInt(authed) : 0;
-        console.info(authed)
         if (authed) {
             resolve();
         } else {
