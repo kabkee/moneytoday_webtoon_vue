@@ -9,7 +9,7 @@
                 <f7-link
                     icon-if-ios="f7:menu"
                     icon-if-md="material:menu"
-                    panel-open="left"
+                    panel-open="right"
                 ></f7-link>
             </f7-nav-right>
 		</f7-navbar>

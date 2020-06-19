@@ -9,7 +9,7 @@
                 <f7-link
                     icon-if-ios="f7:menu"
                     icon-if-md="material:menu"
-                    panel-open="left"
+                    panel-open="right"
                 ></f7-link>
             </f7-nav-right>
 		</f7-navbar>
@@ -90,7 +90,7 @@ export default {
 		// 다음
 		swipeLeftHandler(){
 			let nextChaterId = parseInt(this.chapterId) + 1;
-			if(nextChaterId > this.chapters.length){
+			if(nextChaterId >= this.chapters.length){
 				this.$f7.dialog.alert('첫 에피소드입니다.', '안내');
 			}else{
 				this.$f7router.navigate(`/toon/${this.toonId}/chapter/${nextChaterId}`);
