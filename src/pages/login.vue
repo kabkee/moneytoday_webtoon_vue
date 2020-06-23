@@ -38,7 +38,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
-    props: ["toonId"],
+    props: ["toonId", 'to'],
     data() {
         return {
             id: "",
@@ -56,7 +56,14 @@ export default {
 			if(this.id == this.confirmData.id && this.pw == this.confirmData.pw){
 				if(this.$localStorage.available('localStorage')){
 					this.$localStorage.setAuthed(1);
-					this.$f7router.navigate('/');
+					if(this.to){
+						this.$f7router.navigate(this.to.path, {
+							props: this.to.params
+						});
+					}
+					else{
+						this.$f7router.navigate('/');
+					}
 				}
 			}else{
 				this.$f7.dialog.alert('정보가 잘못 되었습니다.', '경고');

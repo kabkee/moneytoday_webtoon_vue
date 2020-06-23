@@ -18,12 +18,20 @@ function checkAuth(to, from, resolve, reject) {
             resolve();
         } else {
             reject();
-            router.navigate('/login');
+            router.navigate('/login', {
+                props: {
+                    to
+                }
+            });
             return;
         }
     } else {
         reject();
-        router.navigate('/login');
+        router.navigate('/login', {
+            props: {
+                to
+            }
+        });
         return;
     }
 }
