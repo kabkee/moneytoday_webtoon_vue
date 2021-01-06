@@ -9,7 +9,7 @@
         "postinstall": "npm run copy-fonts"
     },
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "core-js": "^3.6.5",
         "framework7": "^3.6.7",
         "framework7-icons": "^0.9.1",
